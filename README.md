@@ -12,6 +12,8 @@ Technologies Used
 1. HTML: Structure of the animation.
 2. CSS: Styling and animation using keyframes.
 
+Video : https://youtube.com/shorts/yPcw3WHi7og?si=3Vg5lQXptiu8NHs_
+
 How to Use
 Clone the repository to your local machine.
 git clone https://github.com/your-username/successful-transaction-animation.git
