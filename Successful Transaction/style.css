@@ -1,0 +1,135 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.loading-container{
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.outer-circle{
+    width: 100px;
+    height: 100px;
+    background-color: #d4ebff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: colorChange 6s infinite;
+}
+
+.dots{
+    display: flex;
+    justify-content: space-between;
+    width: 40px;
+    position: absolute;
+    opacity: 1;
+    animation: fadeOutDots 6s infinite;
+}
+
+.dots span{
+    width: 10px;
+    height: 10px;
+    background-color: #007bff;
+    border-radius: 50%;
+    animation: bounce 1s infinite;
+}
+
+.dots span:nth-child(2){
+    animation-delay: 0.2s;
+}
+
+.dots span:nth-child(3){
+    animation-delay: 0.4s;
+}
+
+.tick-icon{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    animation: tickAppear 6s infinite,
+    tickDraw 6s infinite;
+}
+
+.tick-icon .circle{
+    stroke-width: 3px;
+    stroke-dashoffset: 160;
+    stroke-dasharray: 160;
+    stroke: #d4ffdd;
+    animation: drawCircle 6s infinite;
+}
+
+.tick-icon .check{
+    stroke: #228B22;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 40;
+    stroke-dashoffset: 40;
+    animation: drawCheck 6s infinite;
+}
+
+@keyframes bounce{
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes fadeOutDots{
+    0%, 40%{
+        opacity: 1;
+    }
+    50%, 100%{
+        opacity: 0;
+    }
+}
+
+@keyframes colorChange{
+    0%, 50%{
+        background-color: #d4ebff;
+    }
+    60%, 100%{
+        background-color: #d4ffdd;
+    }
+}
+
+@keyframes tickAppear{
+    0%, 50%{
+        opacity: 0;
+    }
+    60%, 100%{
+        opacity: 1;
+    }
+}
+
+@keyframes drawCircle{
+    0%, 50%{
+        stroke-dashoffset: 160;
+    }
+    60%, 100%{
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawCheck{
+    0%, 50%{
+        stroke-dashoffset: 40;
+    }
+    60%, 100%{
+        stroke-dashoffset: 0;
+    }
+}
